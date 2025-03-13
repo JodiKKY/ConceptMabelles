@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.marquee {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+  
+section.container.min-h-screen.flex.items-center.justify-center.text-white.relative {
+  margin-left: 0px !important;
+  margin-right: 0px;
+  max-width: 100%;
+}
