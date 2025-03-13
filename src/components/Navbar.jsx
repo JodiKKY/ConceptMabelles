@@ -6,7 +6,7 @@ import logo from "../assets/navbar.png";
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 w-full bg-transparent backdrop-blur-md py-4 px-6 flex justify-between items-center z-50">
+    <nav className="fixed top-0 left-0 w-full bg-transparent backdrop-blur-md py-4 px-6 flex items-center justify-between z-50">
       {/* Left Section - Shop */}
       <ul className="flex items-center gap-4">
         <li>
@@ -17,11 +17,12 @@ const Navbar = () => {
         </li>
       </ul>
 
-      {/* Center - Logo + Brand Name */}
-      <Link to="/" className="flex items-center gap-2">
-        <img src={logo} alt="Concept Mabelles Logo" className="h-12 w-auto" />
-        <span className="text-xl font-bold text-white">Concept Mabelles</span>
-      </Link>
+      {/* Center - Logo */}
+      <div className="absolute left-1/2 transform -translate-x-1/2">
+        <Link to="/">
+          <img src={logo} alt="Concept Mabelles Logo" className="h-12 w-auto" />
+        </Link>
+      </div>
 
       {/* Right Section - Wishlist, Cart, Signup */}
       <ul className="flex items-center gap-6">
