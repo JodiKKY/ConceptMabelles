@@ -16,7 +16,7 @@ const Contact = () => {
 
         {/* Contact Info */}
         <div className="mb-6 text-white space-y-3">
-          <p className="text-lg"><span className="font-semibold text-yellow-400">📍 Address:</span> Accra, Ghana</p>
+          <p className="text-lg"><span className="font-semibold text-yellow-400">📍 Address:</span> HP3P+PH5, Accra, Ghana</p>
           <p className="text-lg"><span className="font-semibold text-yellow-400">📞 Phone:</span> +233 123 456 789</p>
           <p className="text-lg"><span className="font-semibold text-yellow-400">✉️ Email:</span> info@conceptmabelles.com</p>
         </div>
@@ -31,14 +31,16 @@ const Contact = () => {
           </button>
         </form>
 
-        {/* Google Map Embed */}
+        {/* Google Map Embed - Using Plus Code HP3P+PH5 */}
         <div className="mt-6">
-          <iframe
-            className="w-full h-64 rounded-lg"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31878.477525787405!2d-0.20545133239669786!3d5.603717992281186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf99c4c2caa1f5%3A0x8f8b58b72b8c62e8!2sAccra%2C%20Ghana!5e0!3m2!1sen!2sgh!4v1710245483812!5m2!1sen!2sgh"
-            allowFullScreen=""
-            loading="lazy"
-          ></iframe>
+        <iframe
+  className="w-full h-64 rounded-lg"
+  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7937.771632032361!2d-0.2635048754138789!3d5.554262494426137!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMzMnMTUuNCJOIDDCsDE1JzQ4LjYiVw!5e0!3m2!1sen!2sgh!4v1710245483812!5m2!1sen!2sgh"
+  allowFullScreen=""
+  loading="lazy"
+></iframe>
+
+
         </div>
       </div>
     </div>
