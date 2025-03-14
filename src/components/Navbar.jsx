@@ -38,7 +38,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/signup" className="bg-transparent text-grey-600 px-4 py-2 rounded-lg hover:bg-gray-200 flex items-center gap-2">
+          <Link to="/Auth" className="bg-transparent text-grey-600 px-4 py-2 rounded-lg hover:bg-gray-200 flex items-center gap-2">
             <CircleUserRound className="h-6 w-6" />
             <span>Sign Up</span>
           </Link>
