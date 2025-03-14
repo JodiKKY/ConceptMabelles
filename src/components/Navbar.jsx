@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping, faHeart, faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icons"; 
+import { ShoppingCart, Heart, User, Store } from "lucide-react";
 import logo from "../assets/navbar.png"; 
 
 const Navbar = () => {
@@ -11,7 +10,7 @@ const Navbar = () => {
       <ul className="flex items-center gap-4">
         <li>
           <Link to="/shop" className="text-white hover:text-gray-300 flex items-center gap-2">
-            <FontAwesomeIcon icon={faCartShopping} className="text-lg" />
+            <Store className="h-6 w-6" />
             <span className="text-lg font-medium">Shop</span>
           </Link>
         </li>
@@ -28,19 +27,19 @@ const Navbar = () => {
       <ul className="flex items-center gap-6">
         <li>
           <Link to="/wishlist" className="text-white hover:text-gray-300 flex items-center gap-2">
-            <FontAwesomeIcon icon={faHeart} className="text-lg" />
+            <Heart className="h-6 w-6" />
             <span className="hidden sm:inline">Wishlist</span>
           </Link>
         </li>
         <li>
           <Link to="/cart" className="text-white hover:text-gray-300 flex items-center gap-2">
-            <FontAwesomeIcon icon={faShoppingCart} className="text-lg" />
+            <ShoppingCart className="h-6 w-6" />
             <span className="hidden sm:inline">My Cart</span>
           </Link>
         </li>
         <li>
           <Link to="/signup" className="bg-transparent text-grey-600 px-4 py-2 rounded-lg hover:bg-gray-200 flex items-center gap-2">
-            <FontAwesomeIcon icon={faUser} className="text-lg" />
+            <User className="h-6 w-6" />
             <span>Sign Up</span>
           </Link>
         </li>
