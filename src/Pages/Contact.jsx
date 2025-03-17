@@ -17,8 +17,8 @@ const Contact = () => {
         {/* Contact Info */}
         <div className="mb-6 text-white space-y-3">
           <p className="text-lg"><span className="font-semibold text-yellow-400">📍 Address:</span> HP3P+PH5, Accra, Ghana</p>
-          <p className="text-lg"><span className="font-semibold text-yellow-400">📞 Phone:</span> +233 123 456 789</p>
-          <p className="text-lg"><span className="font-semibold text-yellow-400">✉️ Email:</span> info@conceptmabelles.com</p>
+          <p className="text-lg"><span className="font-semibold text-yellow-400">📞 Phone:</span> +233 244 806 110</p>
+          <p className="text-lg"><span className="font-semibold text-yellow-400">✉️ Email:</span> mabelle03yirenkyi@gmail.com</p>
         </div>
 
         {/* Contact Form */}
