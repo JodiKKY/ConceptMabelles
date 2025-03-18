@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, googleProvider } from "../firebaseConfig";
 import { signInWithRedirect, getRedirectResult, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { FcGoogle } from "react-icons/fc"; // Google Icon
+import { FcGoogle } from "react-icons/fc"; 
 
 const AuthPage = () => {
   const [isLogin, setIsLogin] = useState(true);
