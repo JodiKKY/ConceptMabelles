@@ -80,7 +80,6 @@ const AuthPage = () => {
           </button>
         </form>
 
-        {/* Google Sign-In Button */}
         <button 
           onClick={handleGoogleAuth} 
           className="w-full mt-4 bg-white text-black border border-gray-300 py-2 rounded-lg hover:bg-gray-200 transition-all flex items-center justify-center gap-2"
