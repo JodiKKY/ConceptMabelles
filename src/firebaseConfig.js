@@ -9,8 +9,9 @@ import {
 const firebaseConfig = {
   apiKey: "AIzaSyC1PmiAfJRb9JNI4zub6cyNHk6aXFSQDFs",
   authDomain: "conceptmabelles.firebaseapp.com",
+  databaseURL: "https://conceptmabelles-default-rtdb.firebaseio.com",
   projectId: "conceptmabelles",
-  storageBucket: "conceptmabelles.appspot.com", 
+  storageBucket: "conceptmabelles.firebasestorage.app",
   messagingSenderId: "708848337518",
   appId: "1:708848337518:web:fb1ab4b8c429d367a51c7f"
 };
