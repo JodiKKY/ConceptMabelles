@@ -17,6 +17,21 @@ const Navbar = () => {
     return () => unsubscribe();
   }, []);
 
+  // Close dropdown if clicked outside
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (dropdownOpen && !e.target.closest('.dropdown')) {
+        setDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleOutsideClick);
+
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, [dropdownOpen]);
+
   const handleLogout = async () => {
     await signOut(auth);
     setUser(null);
@@ -55,7 +70,7 @@ const Navbar = () => {
         </li>
         <li>
           {user ? (
-            <div className="relative">
+            <div className="relative dropdown">
               <button onClick={() => setDropdownOpen(!dropdownOpen)} className="flex items-center gap-2">
                 <img src={user.photoURL || "/default-avatar.png"} alt="Profile" className="h-8 w-8 rounded-full" />
               </button>
