@@ -39,7 +39,7 @@ const Footer = () => {
           <h3 className="text-gray-800 font-medium mb-2">Shipping</h3>
           <ul className="space-y-1">
             <li><a href="#" className="hover:text-gray-700 transition">Shipping Policy</a></li>
-            <li><a href="#" className="hover:text-gray-700 transition">Track Your Order</a></li>
+            <li><a href="/Tracking" className="hover:text-gray-700 transition">Track Your Order</a></li>
           </ul>
         </div>
       </div>
