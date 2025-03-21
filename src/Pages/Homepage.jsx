@@ -122,7 +122,7 @@ const Homepage = () => {
           </div>
         </div>
 
-        <Link to="/shop" className="mt-6 inline-block text-gray-600 hover:underline text-lg font-semibold">
+        <Link to="/Shopping" className="mt-6 inline-block text-gray-600 hover:underline text-lg font-semibold">
           View More
         </Link>
       </section>
