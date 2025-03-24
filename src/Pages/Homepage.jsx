@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import M1 from "../assets/01.png";
-import M2 from "../assets/02.png";
-import M3 from "../assets/03.png";
-import M4 from "../assets/04.png";
-import M5 from "../assets/05.png";
+import M1 from "../assets/Display1.jpg";
+import M2 from "../assets/Display 2.jpg";
+import M3 from "../assets/Display3.jpg";
+import M4 from "../assets/Display4.jpg";
+import M5 from "../assets/Display5.jpg";
 import M6 from "../assets/06.png";
 import bg from "../assets/background.mp4";
 

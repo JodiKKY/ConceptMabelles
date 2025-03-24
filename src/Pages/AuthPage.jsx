@@ -71,7 +71,7 @@ const AuthPage = () => {
   const handleLogout = async () => {
     await signOut(auth);
     setUser(null);
-    navigate("/auth"); // Redirect to login page
+    navigate("/auth"); 
   };
 
   return (
