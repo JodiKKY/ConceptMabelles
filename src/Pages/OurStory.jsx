@@ -9,10 +9,10 @@ const OurStory = () => {
       role="img"
       aria-label="Background image of Concept Mabelles branding"
     >
-      {/* Gradient Overlay for Better Aesthetic */}
+      
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
 
-      {/* Content Container */}
+      
       <div className="relative max-w-4xl sm:max-w-2xl bg-white bg-opacity-10 backdrop-blur-md shadow-2xl rounded-2xl p-10 text-center border border-yellow-400/40">
         <h1 className="text-5xl sm:text-4xl font-extrabold text-yellow-300 mb-6 drop-shadow-lg">
           Our Story
