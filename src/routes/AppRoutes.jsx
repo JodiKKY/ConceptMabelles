@@ -5,6 +5,7 @@ import Contact from '../Pages/Contact';
 import Auth from '../Pages/AuthPage';
 import  Tracking  from '../Pages/Tracking';
 import Shopping from '../Pages/Shopping';
+import Legal from '../Pages/Legal';
 
 function AppRoutes() {
     return (
@@ -15,6 +16,7 @@ function AppRoutes() {
       <Route path="/Auth" element={<Auth/>} />
       <Route path="/Tracking" element={<Tracking/>} />
       <Route path="/Shopping" element={<Shopping/>} />
+      <Route path="/Legal" element={<Legal/>} />
 </Routes>
   );
 }

@@ -2,9 +2,9 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="w-full bg-gray-100">
-      {/* Pre-Footer Section */}
-      <div className="w-full border-b border-gray-300 py-6 px-4 flex flex-col sm:flex-row justify-between text-gray-600 text-sm font-light">
+    <div className="w-full bg-gray-100 text-sm text-gray-600 font-light">
+      {/* Pre-Footer */}
+      <div className="w-full border-b border-gray-300 py-6 px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
         {/* Socials */}
         <div>
           <h3 className="text-gray-800 font-medium mb-2">Socials</h3>
@@ -42,19 +42,50 @@ const Footer = () => {
             <li><a href="/Tracking" className="hover:text-gray-700 transition">Track Your Order</a></li>
           </ul>
         </div>
+
+        {/* Live Chat */}
+        <div>
+          <h3 className="text-gray-800 font-medium mb-2">Live Chat</h3>
+          <ul className="space-y-1">
+            <li>
+              <a href="#" className="hover:text-gray-700 transition">
+                Start Chat Now
+              </a>
+            </li>
+            <li className="text-xs text-gray-500">
+              Available 9am – 6pm GMT
+            </li>
+          </ul>
+        </div>
+
+        {/* Developer */}
+        <div>
+          <h3 className="text-gray-800 font-medium mb-2">Developer</h3>
+          <ul className="space-y-1">
+            <li>
+              <a
+                href="https://twitter.com/JodiKKY"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-700 transition"
+              >
+                @JodiKKY on Twitter
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      
-      <footer className="w-full py-6 px-4 flex flex-col sm:flex-row justify-between items-center text-gray-500 text-sm font-light">
+      {/* Bottom Footer */}
+      <footer className="w-full py-6 px-4 flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-500">
         <a href="#" className="flex items-center gap-2 hover:text-gray-700 transition">
           <i className="fa-solid fa-globe"></i>
           <span>ENGLISH (INTL)</span>
         </a>
 
-      
-        <ul className="flex gap-6 mt-4 sm:mt-0">
+        <ul className="flex flex-wrap gap-4 justify-center sm:justify-end">
           <li><a href="#" className="hover:text-gray-700 transition">Sitemap</a></li>
-          <li><a href="#" className="hover:text-gray-700 transition">Legal & Privacy</a></li>
+          <li><a href="/Legal" className="hover:text-gray-700 transition">Legal & Privacy</a></li>
           <li><a href="#" className="hover:text-gray-700 transition">Cookies</a></li>
         </ul>
       </footer>
