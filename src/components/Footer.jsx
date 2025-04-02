@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Footer = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
   return (
     <div className="w-full bg-gray-100 text-sm text-gray-600 font-light">
       {/* Pre-Footer */}
@@ -59,20 +61,23 @@ const Footer = () => {
         </div>
 
         {/* Developer */}
-        <div>
+        <div className="relative">
           <h3 className="text-gray-800 font-medium mb-2">Developer</h3>
-          <ul className="space-y-1">
-            <li>
-              <a
-                href="https://twitter.com/JodiKKY"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-gray-700 transition"
-              >
-                @JodiKKY on Twitter
-              </a>
-            </li>
-          </ul>
+          <button
+            onClick={() => setShowPopup(!showPopup)}
+            className="hover:text-gray-700 transition"
+          >
+            JodiKKY
+          </button>
+          {showPopup && (
+            <div className="absolute bg-white shadow-lg p-4 rounded-lg mt-2 w-48">
+              <ul className="space-y-2">
+                <li><a href="https://github.com/JodiKKY" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">GitHub</a></li>
+                <li><a href="https://linkedin.com/in/jodiyirenkyi" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">LinkedIn</a></li>
+                <li><a href="https://twitter.com/JodiKKY" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Twitter</a></li>
+              </ul>
+            </div>
+          )}
         </div>
       </div>
 
