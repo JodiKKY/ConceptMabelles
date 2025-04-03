@@ -1,7 +1,7 @@
 import React from "react";
 
 const Filters = ({ onFilter }) => {
-  const categories = ["All", "Clothing", "Shoes"];
+  const categories = ["All", "Long Sleeve", "Short Sleeve","Women","Two piece"];
 
   return (
     <div className="flex gap-4 mb-6">
