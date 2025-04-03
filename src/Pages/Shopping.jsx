@@ -1,112 +1,59 @@
-import React, { useState } from "react";
-import { FaShoppingCart, FaTrash } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import ProductCard from "../components/ProductCard";
+import Filters from "../components/Filters";
+import M1 from "../assets/Display1.jpg";
+import M2 from "../assets/Display 2.jpg";
+import M3 from "../assets/Display3.jpg";
+import M4 from "../assets/Display4.jpg";
+import M5 from "../assets/Display5.jpg";
+import M6 from "../assets/06.png";
+import bg from "../assets/background.mp4";
 
-const products = [
-  { id: 1, name: "Men's Suit", category: "Men", price: 120, image: "https://via.placeholder.com/200" },
-  { id: 2, name: "Women's Dress", category: "Women", price: 90, image: "https://via.placeholder.com/200" },
-  { id: 3, name: "Kids' Outfit", category: "Kids", price: 50, image: "https://via.placeholder.com/200" },
-  { id: 4, name: "Men's Casual Shirt", category: "Men", price: 40, image: "https://via.placeholder.com/200" },
-  { id: 5, name: "Women's Blouse", category: "Women", price: 35, image: "https://via.placeholder.com/200" },
-];
+const Shopping = () => {
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
-const categories = ["All", "Men", "Women", "Kids"];
+  useEffect(() => {
+   
+    const fetchedProducts = [
+      { id: 1, name: "Men", price: 120, category: "Clothing", image: M1 },
+      { id: 2, name: "Women", price: 250, category: "Clothing", image: M2 },
+      { id: 3, name: "Cloth", price: 300, category: "Shoes", image: M3},
+      { id: 4, name: "Cloth", price: 300, category: "Shoes", image: M4},
+      { id: 5, name: "Cloth", price: 300, category: "Shoes", image: M5},
+      { id: 6, name: "Cloth", price: 300, category: "Shoes", image: M6},
+      { id: 7, name: "Men", price: 120, category: "Clothing", image: M1 },
+      { id: 8, name: "Women", price: 250, category: "Clothing", image: M2 },
+      { id: 9, name: "Cloth", price: 300, category: "Shoes", image: M3},
+      { id: 10, name: "Cloth", price: 300, category: "Shoes", image: M4},
+      { id: 11, name: "Cloth", price: 300, category: "Shoes", image: M5},
+      { id: 12, name: "Cloth", price: 300, category: "Shoes", image: M6},
+      
 
-const Shop = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [cart, setCart] = useState([]);
-  const [showCart, setShowCart] = useState(false);
+    ];
+    setProducts(fetchedProducts);
+    setFilteredProducts(fetchedProducts);
+  }, []);
 
-  const filteredProducts = selectedCategory === "All"
-    ? products
-    : products.filter((product) => product.category === selectedCategory);
-
-  // Add to Cart
-  const addToCart = (product) => {
-    setCart((prevCart) => [...prevCart, product]);
-  };
-
-  // Remove from Cart
-  const removeFromCart = (index) => {
-    setCart((prevCart) => prevCart.filter((_, i) => i !== index));
+  const handleFilter = (category) => {
+    if (category === "All") {
+      setFilteredProducts(products);
+    } else {
+      setFilteredProducts(products.filter((item) => item.category === category));
+    }
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      
-      {/* Navbar */}
-      <nav className="bg-white shadow-md p-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-gray-900">Concept Mabelles</h1>
-        
-        {/* Cart Section */}
-        <div className="relative">
-          <button onClick={() => setShowCart(!showCart)} className="relative text-gray-800">
-            <FaShoppingCart className="text-2xl" />
-            {cart.length > 0 && (
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
-                {cart.length}
-              </span>
-            )}
-          </button>
-
-          {/* Cart Dropdown */}
-          {showCart && (
-            <div className="absolute right-0 mt-2 w-64 bg-white shadow-lg rounded-lg p-4">
-              <h2 className="text-lg font-semibold mb-2">Cart</h2>
-              {cart.length === 0 ? (
-                <p className="text-gray-600">Your cart is empty.</p>
-              ) : (
-                <ul>
-                  {cart.map((item, index) => (
-                    <li key={index} className="flex justify-between items-center border-b py-2">
-                      <span className="text-sm">{item.name}</span>
-                      <div className="flex items-center">
-                        <span className="text-sm font-semibold mr-2">${item.price}</span>
-                        <button onClick={() => removeFromCart(index)} className="text-red-500">
-                          <FaTrash />
-                        </button>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          )}
-        </div>
-      </nav>
-
-      {/* Category Filter */}
-      <div className="flex justify-center gap-4 mt-6">
-        {categories.map((category) => (
-          <button
-            key={category}
-            className={`px-5 py-2 rounded-md font-semibold text-gray-800 transition ${
-              selectedCategory === category ? "bg-yellow-400" : "bg-gray-200 hover:bg-yellow-300"
-            }`}
-            onClick={() => setSelectedCategory(category)}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
-
-      {/* Product Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">Shop</h1>
+      <Filters onFilter={handleFilter} />
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {filteredProducts.map((product) => (
-          <div key={product.id} className="bg-white p-4 rounded-lg shadow-lg">
-            <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-md" />
-            <h3 className="text-lg font-semibold text-gray-900 mt-4">{product.name}</h3>
-            <p className="text-gray-700">${product.price}</p>
-            <button
-              className="w-full mt-3 bg-yellow-400 text-gray-900 py-2 rounded-md hover:bg-yellow-500"
-              onClick={() => addToCart(product)}
-            >
-              Add to Cart
-            </button>
-          </div>
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>
   );
 };
 
-export default Shop;
+export default Shopping;
