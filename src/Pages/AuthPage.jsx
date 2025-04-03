@@ -17,7 +17,7 @@ const AuthPage = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [user, setUser] = useState(null);  // 🔥 Track user state
+  const [user, setUser] = useState(null); 
   const navigate = useNavigate();
 
   // Check if user is already logged in
