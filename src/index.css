@@ -24,3 +24,11 @@ section.container.min-h-screen.flex.items-center.justify-center.text-white.relat
   margin-right: 0px;
   max-width: 100%;
 }
+
+img.prImg {
+  max-width: 18vw;
+  width: 18vw;
+  max-height: 30vh;
+  height: 30vh;
+  object-fit: contain;
+}
