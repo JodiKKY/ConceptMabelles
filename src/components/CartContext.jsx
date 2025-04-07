@@ -10,8 +10,20 @@ export const CartProvider = ({ children }) => {
     setCart((prev) => [...prev, item]);
   };
 
+  const addToWishlist = (item) => {
+    setWishlist((prev) => [...prev, item]);
+  };
+
   const removeFromWishlist = (id) => {
     setWishlist((prev) => prev.filter((item) => item.id !== id));
+  };
+
+  const removeFromCart = (id) => {
+    setCart((prev) => prev.filter((item) => item.id !== id));
+  };
+
+  const removeAllFromCart = (id) => {
+    setCart((prev) => prev.filter((item) => item.id !== id));
   };
 
   const clearCart = () => {
@@ -23,7 +35,19 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cart, wishlist, addToCart, removeFromWishlist, clearCart, clearWishlist }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        wishlist,
+        addToCart,
+        addToWishlist,
+        removeFromWishlist,
+        removeFromCart,
+        removeAllFromCart,
+        clearCart,
+        clearWishlist,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

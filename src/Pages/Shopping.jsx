@@ -16,7 +16,7 @@ const Shopping = () => {
   useEffect(() => {
    
     const fetchedProducts = [
-      { id: 1, name: "Men", price: 120, category: "Clothing", image: M1 },
+      { id: 1, name: "Men", price: 120, category: "Long Sleeve", image: M1 },
       { id: 2, name: "Women", price: 250, category: "Clothing", image: M2 },
       { id: 3, name: "Cloth", price: 300, category: "Shoes", image: M3},
       { id: 4, name: "Cloth", price: 300, category: "Shoes", image: M4},
