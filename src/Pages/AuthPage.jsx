@@ -12,11 +12,15 @@ import {
   signOut
 } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
+import { Eye, EyeOff } from "lucide-react";
 
 const AuthPage = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(null);
@@ -30,7 +34,6 @@ const AuthPage = () => {
     return () => unsubscribe();
   }, [navigate]);
 
-  // Google Sign-In with Popup
   const handleGoogleAuth = async () => {
     setLoading(true);
     setError("");
@@ -46,11 +49,16 @@ const AuthPage = () => {
     }
   };
 
-  // Email/Password Auth
   const handleAuth = async (e) => {
     e.preventDefault();
     setError("");
     setLoading(true);
+
+    if (!isLogin && password !== confirmPassword) {
+      setError("Passwords do not match.");
+      setLoading(false);
+      return;
+    }
 
     try {
       if (isLogin) {
@@ -115,17 +123,43 @@ const AuthPage = () => {
                 />
               </div>
 
-              <div className="mb-4">
+              <div className="mb-4 relative">
                 <label className="block text-gray-600 text-sm">Password</label>
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black pr-10"
                   required
                   autoComplete={isLogin ? "current-password" : "new-password"}
                 />
+                <span
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-9 cursor-pointer text-gray-600"
+                >
+                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                </span>
               </div>
+
+              {!isLogin && (
+                <div className="mb-4 relative">
+                  <label className="block text-gray-600 text-sm">Confirm Password</label>
+                  <input
+                    type={showConfirmPassword ? "text" : "password"}
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black pr-10"
+                    required
+                    autoComplete="new-password"
+                  />
+                  <span
+                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                    className="absolute right-3 top-9 cursor-pointer text-gray-600"
+                  >
+                    {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                  </span>
+                </div>
+              )}
 
               <button
                 type="submit"

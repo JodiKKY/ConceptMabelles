@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ShoppingCart, Heart, CircleUserRound, Store, X, Trash2, LogOut } from "lucide-react";
+import {  Heart, CircleUserRound, ShoppingBag, X, Trash2, LogOut } from "lucide-react";
 import { useCart } from "./CartContext"; 
 import { auth } from "../firebaseConfig";
 import { onAuthStateChanged, signOut } from "firebase/auth";
@@ -46,9 +46,9 @@ const Navbar = () => {
 
   const handleProfileClick = () => {
     if (!user) {
-      navigate("/auth"); // Redirect to the Auth page if not logged in
+      navigate("/auth"); 
     } else {
-      setProfileOpen(!profileOpen); // Toggle profile menu if user is logged in
+      setProfileOpen(!profileOpen); 
     }
   };
 
@@ -58,7 +58,7 @@ const Navbar = () => {
       <ul className="flex items-center gap-4">
         <li>
           <Link to="/shopping" className="text-black font-light hover:text-gray-600 flex items-center gap-2">
-            <Store className="h-6 w-6" />
+          <ShoppingBag className="h-6 w-6" />
           </Link>
         </li>
       </ul>
