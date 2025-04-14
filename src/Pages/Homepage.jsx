@@ -21,7 +21,7 @@ const Homepage = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    const launchDate = new Date().getTime() + 14 * 24 * 60 * 60 * 1000; // 14 days from now
+    const launchDate = new Date().getTime() + 14 * 24 * 60 * 60 * 1000; 
 
     const calculateTimeLeft = () => {
       const now = new Date().getTime();
