@@ -17,10 +17,6 @@ const ProductCard = ({ product }) => {
   };
 
   const handleAddToWishlist = () => {
-    if (!selectedSize || !selectedType) {
-      alert("Please select a size and type.");
-      return;
-    }
     addToWishlist({ ...product, selectedSize, selectedType });
   };
 
