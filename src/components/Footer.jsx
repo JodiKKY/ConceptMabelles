@@ -72,9 +72,9 @@ const Footer = () => {
           {showPopup && (
             <div className="absolute bg-white shadow-lg p-4 rounded-lg mt-2 w-48">
               <ul className="space-y-2">
-                <li><a href="https://github.com/JodiKKY" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">GitHub</a></li>
-                <li><a href="https://linkedin.com/in/jodiyirenkyi" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">LinkedIn</a></li>
-                <li><a href="https://twitter.com/JodiKKY" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Twitter</a></li>
+                <li><a href="https://github.com/JodiKKY" target="_blank" rel="noopener noreferrer" className="text-black hover:underline">GitHub</a></li>
+                <li><a href="https://linkedin.com/in/jodiyirenkyi" target="_blank" rel="noopener noreferrer" className="text-black hover:underline">LinkedIn</a></li>
+                <li><a href="https://twitter.com/JodiKKY" target="_blank" rel="noopener noreferrer" className="text-black hover:underline">Twitter</a></li>
               </ul>
             </div>
           )}
