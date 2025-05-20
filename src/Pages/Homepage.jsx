@@ -9,12 +9,12 @@ import M6 from "../assets/06.png";
 import bg from "../assets/background.mp4";
 
 const products = [
-  { img: M1, name: "ex a", price: "Coming soon" },
-  { img: M2, name: "ex b", price: "Coming soon" },
-  { img: M3, name: "exc", price: "Coming soon" },
-  { img: M4, name: "ex d", price: "Coming soon" },
-  { img: M5, name: "ex e", price: "Coming soon" },
-  { img: M6, name: "ex f", price: "$Coming soon" },
+  { img: M1,  price: "Coming soon" },
+  { img: M2,  price: "Coming soon" },
+  { img: M3,  price: "Coming soon" },
+  { img: M4,  price: "Coming soon" },
+  { img: M5,  price: "Coming soon" },
+  { img: M6,  price: "$Coming soon" },
 ];
 
 const Homepage = () => {
