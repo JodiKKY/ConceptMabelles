@@ -10,19 +10,15 @@ const Shopping = () => {
   const [showSizeGuide, setShowSizeGuide] = useState(false);
 
   useEffect(() => {
-    // Reference to your 'item' node in Firebase Realtime DB
     const productsRef = ref(database, "item");
 
-    // Listen for realtime updates
     const unsubscribe = onValue(productsRef, (snapshot) => {
       const data = snapshot.val();
 
       if (data) {
-        // Transform Firebase object into array
         const formatted = Object.entries(data).map(([id, item]) => ({
           id,
           ...item,
-          // Make sure each product has an 'image' property with a valid URL or imported image
         }));
 
         setProducts(formatted);
@@ -33,7 +29,6 @@ const Shopping = () => {
       }
     });
 
-    // Cleanup subscription on unmount
     return () => unsubscribe();
   }, []);
 
@@ -46,10 +41,9 @@ const Shopping = () => {
   };
 
   return (
-    <div className="p-6">
+    <div className="pt-20 px-4 sm:px-6"> 
       <div className="text-2xl font-bold mb-4">Shop</div>
 
-      {/* Filters and Size Guide Button */}
       <div className="flex items-center justify-between mb-6 flex-wrap gap-2">
         <Filters onFilter={handleFilter} />
         <button
@@ -60,7 +54,7 @@ const Shopping = () => {
         </button>
       </div>
 
-      {/* Size Guide Modal */}
+    
       {showSizeGuide && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 max-w-md">
