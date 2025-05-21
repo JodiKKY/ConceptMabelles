@@ -90,7 +90,7 @@ const ProductCard = ({ product }) => {
         )}
       </div>
 
-      {/* Product Info */}
+   
       <div className="p-3 text-center">
         <h3 className="text-[13px] font-light text-gray-900 truncate">{product.name}</h3>
         <div className="text-[12px] mt-1">
@@ -102,11 +102,8 @@ const ProductCard = ({ product }) => {
           <span className="text-red-500 font-semibold">GH₵ {product.price}</span>
         </div>
 
-        {/* Add to Cart Button */}
-        <button
-          onClick={handleAddToCart}
-          className="mt-2 flex items-center justify-center w-full bg-gray-200 text-gray-900 py-2 rounded-lg text-[12px] font-medium hover:bg-gray-700 hover:text-white transition"
-        >
+  
+        <button onClick={handleAddToCart} className="mt-2 flex items-center justify-center w-full bg-gray-200 text-gray-900 py-2 rounded-lg text-[12px] font-medium hover:bg-gray-700 hover:text-white transition"  >
           <ShoppingCart className="w-4 h-4 mr-2" />
           Add to Cart
         </button>
