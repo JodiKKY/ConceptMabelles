@@ -11,7 +11,7 @@ const Contact = () => {
       <div className="relative max-w-4xl bg-white bg-opacity-20 backdrop-blur-lg shadow-lg rounded-lg p-10 text-center border border-white/30">
         <h1 className="text-4xl font-extrabold text-white mb-4 drop-shadow-md">Contact Us</h1>
         <p className="text-lg text-white mb-6">
-          Have questions or want to collaborate? Reach out to us!
+          Have questions or want to collaborate ? Reach out to us!
         </p>
 
         {/* Contact Info */}
