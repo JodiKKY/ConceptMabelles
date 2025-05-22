@@ -63,16 +63,16 @@ const Navbar = () => {
         </li>
       </ul>
 
-      {/* Logo */}
+
       <div className="absolute left-1/2 transform -translate-x-1/2">
         <Link to="/">
           <img src={logo} alt="Concept Mabelles Logo" className="h-12 w-auto" />
         </Link>
       </div>
 
-      {/* Right Nav */}
+
       <ul className="flex items-center gap-6">
-        {/* Wishlist */}
+   
         <li className="relative wishlist-dropdown">
           <button onClick={() => setWishlistOpen(!wishlistOpen)} className="relative flex items-center">
             <Heart className="h-6 w-6 text-gray-700" />
@@ -118,7 +118,7 @@ const Navbar = () => {
           )}
         </li>
 
-        {/* Cart */}
+       
         <li className="relative cart-dropdown">
           <button onClick={() => setCartOpen(!cartOpen)} className="relative flex items-center">
             <ShoppingCart className="h-6 w-6 text-gray-700" />
@@ -171,7 +171,7 @@ const Navbar = () => {
           )}
         </li>
 
-        {/* Profile */}
+       
         <li className="relative profile-dropdown">
           <button
             onClick={handleProfileClick}

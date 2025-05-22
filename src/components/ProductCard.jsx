@@ -105,7 +105,7 @@ const ProductCard = ({ product }) => {
   
         <button onClick={handleAddToCart} className="mt-2 flex items-center justify-center w-full bg-gray-200 text-gray-900 py-2 rounded-lg text-[12px] font-medium hover:bg-gray-700 hover:text-white transition"  >
           <ShoppingCart className="w-4 h-4 mr-2" />
-          Add to Cart
+          Add to Cart.
         </button>
       </div>
     </div>
