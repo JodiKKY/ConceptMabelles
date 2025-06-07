@@ -17,17 +17,17 @@ const firebaseConfig = {
   appId: "1:708848337518:web:fb1ab4b8c429d367a51c7f"
 };
 
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
 
 // Auth
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
-// ✅ Realtime Database
+
 const database = getDatabase(app);
 
-// ✅ Storage
+
 const storage = getStorage(app);
 
 export {
